@@ -1,0 +1,133 @@
+body {
+            background: #080d1e;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .edit-navbar {
+            background: #10182e;
+            border-bottom: 1px solid #293555;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .edit-logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .edit-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .edit-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .edit-container {
+            max-width: 750px;
+            margin: 45px auto;
+            padding: 0 20px 60px;
+        }
+
+        .edit-card {
+            background: #111a33;
+            border: 1px solid #293555;
+            border-radius: 20px;
+            padding: 32px;
+        }
+
+        .edit-card h1 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .edit-subtitle {
+            color: #aeb9d4;
+            margin-bottom: 30px;
+        }
+
+        .edit-group {
+            margin-bottom: 22px;
+        }
+
+        .edit-group label {
+            display: block;
+            color: #e2e8f0;
+            margin-bottom: 9px;
+            font-weight: 600;
+        }
+
+        .edit-group input,
+        .edit-group select,
+        .edit-group textarea {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            background: #0b1226;
+            color: #f8fafc;
+            border: 1px solid #344364;
+            border-radius: 10px;
+            padding: 13px 15px;
+            font: inherit;
+        }
+
+        .edit-group textarea {
+            resize: vertical;
+            min-height: 130px;
+        }
+
+        .edit-group input:focus,
+        .edit-group select:focus,
+        .edit-group textarea:focus {
+            outline: none;
+            border-color: #a78bfa;
+        }
+
+        .edit-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 28px;
+        }
+
+        .edit-save {
+            background: linear-gradient(135deg, #6854eb, #9665ef);
+            color: white;
+            border: none;
+            border-radius: 11px;
+            padding: 13px 24px;
+            font: inherit;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .edit-cancel {
+            background: #263454;
+            color: #e2e8f0;
+            text-decoration: none;
+            border-radius: 11px;
+            padding: 13px 24px;
+        }
+
+        .edit-error {
+            background: #4c1d2c;
+            color: #fecdd3;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 22px;
+        }
+
+        @media (max-width: 600px) {
+            .edit-card {
+                padding: 22px;
+            }
+        }

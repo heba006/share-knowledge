@@ -1,0 +1,40 @@
+:root{color-scheme:dark;--bg:#0a1021;--panel:#151d34;--line:#35405e;--text:#f3f4ff;--muted:#aab6d1;--violet:#cdb4ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:'DM Sans',Arial,sans-serif;overflow-x:hidden}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 8% 8%,#31317b88,transparent 38%),radial-gradient(ellipse at 90% 80%,#693b8a66,transparent 42%)}
+a{color:#cbb7ff;text-decoration:none;font-weight:700}a:hover{color:#fff}
+.shell{position:relative;z-index:1;min-height:100vh;max-width:1280px;margin:auto;padding:26px 28px 45px;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{font:800 23px Outfit,Arial,sans-serif;letter-spacing:-.7px;color:#fff;display:inline-flex;align-items:center;gap:10px}
+.brand-icon{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#587cf2,#9656e7);display:grid;place-items:center;color:#fff;font-size:24px}
+.back{font-size:13px;color:#c2c9e2;border:1px solid #3b4668;background:#ffffff08;padding:10px 15px;border-radius:11px}
+.layout{flex:1;display:grid;grid-template-columns:minmax(0,1.06fr) minmax(360px,.94fr);gap:64px;align-items:center;padding:40px 0}
+.intro{padding:24px 0 24px 16px;max-width:590px}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#c7b2ff}
+h1,h2{font-family:Outfit,Arial,sans-serif;letter-spacing:-1.2px}
+.intro h1{font-size:clamp(44px,5.5vw,73px);line-height:1.07;margin:20px 0}
+.intro h1 span{background:linear-gradient(110deg,#a7b8ff,#e1b6ff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.intro p{font-size:16px;color:#b7c2dd;line-height:1.85;max-width:460px}
+.features{display:grid;gap:18px;margin-top:35px}
+.feature{display:flex;gap:13px;align-items:center;color:#e3e6fa;font-size:14px;font-weight:600}
+.feature-icon{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:13px;border:1px solid #514b86;background:#29244d;font-size:20px}
+.auth-card{width:100%;max-width:495px;margin-left:auto;background:linear-gradient(160deg,#1a2440,#131b31);border:1px solid #3b4667;border-radius:28px;padding:43px;box-shadow:0 30px 80px #0006,0 0 65px #6555c216}
+.card-symbol{width:59px;height:59px;display:grid;place-items:center;background:linear-gradient(135deg,#5269db,#8753c9);border-radius:18px;font-size:29px;box-shadow:0 12px 28px #5146ba55}
+.auth-card h2{font-size:34px;margin:20px 0 7px}
+.subtitle{color:var(--muted);font-size:13px;line-height:1.7;margin:0 0 29px}
+.field{margin:19px 0}
+.field label{display:block;font-size:13px;color:#dce2f7;font-weight:700;margin-bottom:10px}
+.field input{width:100%;border:1px solid #3b4666;border-radius:12px;background:#0d1529;color:#fff;padding:15px 16px;font:inherit;font-size:14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.field input::placeholder{color:#8793b0}
+.field input:focus{border-color:#ac8cff;box-shadow:0 0 0 4px #9673ed25}
+.password-wrap{position:relative}
+.password-wrap input{padding-right:76px}
+.toggle{position:absolute;right:9px;top:50%;transform:translateY(-50%);background:transparent;border:0;color:#cbb7ff;font:700 12px 'DM Sans',sans-serif;cursor:pointer;padding:10px}
+.submit{width:100%;padding:16px 20px;margin-top:12px;border:0;border-radius:12px;background:linear-gradient(105deg,#5578ed,#8756e1);box-shadow:0 12px 25px #6156cf44;color:#fff;font:800 15px 'DM Sans',sans-serif;cursor:pointer;transition:filter .2s,transform .2s}
+.submit:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.error{background:#5a26374d;border:1px solid #b9627a;color:#ffd9e3;padding:13px 15px;border-radius:12px;font-size:13px;line-height:1.5;margin-bottom:20px}
+.signup{text-align:center;font-size:13px;color:#b6c0d8;margin:25px 0 0}
+.separator{height:1px;background:#34405e;margin:25px 0 0}
+.footer{text-align:center;font-size:12px;color:#8290b2}
+@media(max-width:930px){.layout{grid-template-columns:1fr;gap:16px;max-width:570px;margin:auto}.intro{padding:12px 0}.intro h1{font-size:44px}.intro p{font-size:14px}.features{grid-template-columns:1fr 1fr;gap:10px}.auth-card{max-width:none;margin:0}}
+@media(max-width:560px){.shell{padding:18px 16px 26px}.brand{font-size:19px}.brand-icon{width:36px;height:36px}.layout{padding:22px 0}.intro h1{font-size:39px}.features{grid-template-columns:1fr}.auth-card{padding:27px 22px;border-radius:22px}.auth-card h2{font-size:29px}.back{font-size:12px}}

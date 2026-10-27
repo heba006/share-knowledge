@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+
+assets/uploads/
+share_knowledge_private_uploads/
+
+*.sql
+*.sql.gz
+*.zip
+*.log
+
+.vscode/
+.idea/
+# Local database test
+test_db.php
+assets/images/browse.php

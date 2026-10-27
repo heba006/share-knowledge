@@ -1,0 +1,165 @@
+.messages-page { background: #f8fafc; min-height: 85vh; padding: 35px 20px; }
+
+        .messages-container { max-width: 1150px; margin: auto; }
+
+        .messages-title { color: #10213b; margin-bottom: 25px; }
+
+        .messages-layout { display: grid; grid-template-columns: 300px 1fr; gap: 20px; }
+
+        .students-panel, .chat-panel { background: white; border: 1px solid #e2e8f0; border-radius: 14px; overflow: hidden; }
+
+        .panel-heading { padding: 20px; border-bottom: 1px solid #e2e8f0; color: #10213b; }
+
+        .student-link { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid #f1f5f9; color: #334155; text-decoration: none; }
+
+        .student-link:hover, .student-link.active { background: #eff6ff; color: #2563eb; }
+
+        .student-info { min-width: 0; overflow-wrap: anywhere; }
+
+        .student-info small { display: block; color: #64748b; margin-top: 5px; }
+
+        .unread-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 22px; height: 22px; padding: 0 6px; box-sizing: border-box; border-radius: 999px; background: #dc2626; color: white; font-size: 12px; font-weight: bold; }
+
+        .nav-unread { margin-left: 4px; }
+
+        .chat-messages { min-height: 350px; max-height: 480px; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+
+        .chat-bubble { max-width: 75%; padding: 13px 16px; border-radius: 14px; overflow-wrap: anywhere; }
+
+        .chat-bubble.sent { align-self: flex-end; background: #2563eb; color: white; }
+
+        .chat-bubble.received { align-self: flex-start; background: #f1f5f9; color: #10213b; }
+
+        .chat-bubble small { display: block; margin-top: 8px; font-size: 11px; opacity: 0.75; }
+
+        .chat-form { padding: 20px; border-top: 1px solid #e2e8f0; }
+
+        .chat-form textarea { width: 100%; min-height: 85px; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; resize: vertical; font: inherit; box-sizing: border-box; }
+
+        .send-btn { margin-top: 12px; padding: 12px 25px; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; }
+
+        .send-btn:hover { background: #1d4ed8; }
+
+        .empty-chat { color: #64748b; text-align: center; padding: 70px 20px; }
+
+        .message-error { background: #fee2e2; color: #991b1b; padding: 12px; margin-bottom: 20px; border-radius: 8px; }
+
+        .student-search-wrap { padding: 15px; }
+
+        .student-search { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
+
+        @media (max-width: 750px) {
+
+            .messages-layout { grid-template-columns: 1fr; }
+
+            .chat-bubble { max-width: 90%; }
+
+        }
+
+
+
+/* Midnight Sapphire — standalone overrides */
+
+:root{color-scheme:dark;--mid-bg:#0a1021;--mid-panel:#151d34;--mid-line:#303a59;--mid-text:#f4f2ff;--mid-muted:#aeb8d4}
+
+*{box-sizing:border-box}
+
+body{margin:0!important;background:var(--mid-bg)!important;color:var(--mid-text)!important;font-family:"DM Sans",Arial,sans-serif!important}
+
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 10% 12%,#29265b70,transparent 40%),radial-gradient(ellipse at 95% 55%,#45276550,transparent 44%)}
+
+body h1,body h2,body h3{font-family:Outfit,"DM Sans",sans-serif}
+
+body .mid-nav{min-height:76px;padding:14px max(20px,calc((100vw - 1240px)/2));background:#10172b;border-bottom:1px solid #303654;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+body .mid-brand{color:#fff;text-decoration:none;font:800 22px Outfit,Arial,sans-serif;white-space:nowrap}
+
+body .mid-brand span{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#5678f2,#9c58e6);margin-right:8px}
+
+body .mid-links{display:flex;align-items:center;flex-wrap:wrap;gap:19px}
+
+body .mid-links a{color:#bfc5df;text-decoration:none;font-size:13px;font-weight:700}
+
+body .mid-links a.active,body .mid-links a:hover{color:#d6bcff}
+
+body .mid-links .mid-logout{background:#242447;color:#e8dcff;padding:10px 14px;border-radius:11px}
+
+body .messages-page{background:transparent!important;min-height:calc(100vh - 76px);padding:34px 20px 65px}
+
+body .messages-container{max-width:1200px}
+
+body .mid-hero{background:radial-gradient(circle at 92% 18%,#8350b65a,transparent 38%),linear-gradient(115deg,#182a59,#2b285d 60%,#432b72);border:1px solid #4a447b;border-radius:24px;padding:30px 35px;margin-bottom:24px;box-shadow:0 16px 38px #0003}
+
+body .mid-eyebrow{color:#d3c0ff;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+
+body .messages-title{color:#fff!important;font-size:clamp(29px,4vw,42px);letter-spacing:-1px;margin:9px 0 8px}
+
+body .mid-hero p{color:#d1d4ef;font-size:13px;margin:0;line-height:1.7}
+
+body .messages-layout{grid-template-columns:320px minmax(0,1fr);gap:20px;align-items:stretch}
+
+body .students-panel,body .chat-panel{background:#151d34!important;border:1px solid #303a59!important;border-radius:20px;overflow:hidden;box-shadow:0 12px 26px #0002;min-width:0}
+
+body .panel-heading{color:#fff!important;background:#19233e;border-bottom:1px solid #303a59!important;padding:19px 21px;margin:0;font-size:17px}
+
+body .student-search-wrap{padding:16px;border-bottom:1px solid #303a59}
+
+body .student-search,body .chat-form textarea{background:#0e172b!important;border:1px solid #3d4767!important;border-radius:11px!important;color:#f2f3ff!important;font:inherit;outline:none}
+
+body .student-search:focus,body .chat-form textarea:focus{border-color:#a78aff!important;box-shadow:0 0 0 3px #9d77ff22}
+
+body input::placeholder,body textarea::placeholder{color:#8490b1}
+
+body .student-link{border-bottom:1px solid #28334f!important;color:#e1e5f8!important;padding:15px 17px;gap:12px;transition:background .2s}
+
+body .student-link:hover{background:#232a4a!important;color:#fff!important}
+
+body .student-link.active{background:linear-gradient(105deg,#35336c,#4b3478)!important;color:#fff!important;border-left:3px solid #b49bff}
+
+body .student-info{display:flex;align-items:center;gap:11px;flex:1}
+
+body .student-info .mid-avatar{width:39px;height:39px;flex:0 0 39px;border-radius:13px;background:linear-gradient(135deg,#4456a5,#7950b6);display:grid;place-items:center;color:#fff;font-size:17px;font-weight:800}
+
+body .student-info .mid-user-meta{min-width:0;overflow-wrap:anywhere}
+
+body .student-info small{color:#aeb8d4!important;font-size:11px;margin-top:3px}
+
+body .unread-badge{background:#c14d9d;color:#fff;box-shadow:0 0 0 2px #ffffff10}
+
+body .nav-unread{margin-left:4px}
+
+body .chat-panel{display:flex;flex-direction:column;min-height:525px}
+
+body .mid-chat-heading{display:flex;align-items:center;gap:11px}
+
+body .mid-chat-heading .mid-avatar{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,#4966c7,#8a5cce);display:grid;place-items:center}
+
+body .chat-messages{flex:1;min-height:350px;max-height:520px;padding:24px;gap:15px;scrollbar-color:#54517e #151d34}
+
+body .chat-bubble{max-width:78%;border-radius:16px!important;padding:13px 16px;line-height:1.6;font-size:13px;box-shadow:0 5px 15px #0002}
+
+body .chat-bubble.sent{background:linear-gradient(120deg,#4d64cc,#7950bc)!important;color:#fff;border-bottom-right-radius:4px!important}
+
+body .chat-bubble.received{background:#252f4b!important;color:#e9edff!important;border:1px solid #3c4768;border-bottom-left-radius:4px!important}
+
+body .chat-bubble small{font-size:10px;color:#e2e3f8;opacity:.75}
+
+body .chat-form{border-top:1px solid #303a59!important;background:#19213a;padding:17px 20px 19px}
+
+body .chat-form textarea{min-height:90px;resize:vertical;padding:14px}
+
+body .send-btn{background:linear-gradient(110deg,#5678ee,#8757e1)!important;color:white;padding:12px 22px;border:0;border-radius:11px;font-weight:800;font-size:13px;font-family:inherit;cursor:pointer}
+
+body .send-btn:hover{filter:brightness(1.12)}
+
+body .empty-chat{color:#aeb8d4!important;padding:90px 20px;text-align:center}
+
+body .empty-chat h2{color:#fff;font-size:23px}
+
+body .message-error{background:#48233b!important;color:#ffd1dc!important;border:1px solid #a64b76;border-radius:12px;padding:14px}
+
+body .mid-empty-students{padding:20px;color:#aeb8d4;font-size:13px}
+
+@media(max-width:850px){body .messages-layout{grid-template-columns:1fr}body .chat-panel{min-height:430px}body .students-panel{max-height:340px;overflow-y:auto}}
+
+@media(max-width:600px){body .messages-page{padding:20px 12px 45px}body .mid-hero{padding:25px 20px}body .mid-nav{padding:13px}body .mid-links{gap:12px}body .chat-bubble{max-width:92%}body .chat-messages{padding:15px}body .student-link{padding:12px}}

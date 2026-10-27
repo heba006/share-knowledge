@@ -1,0 +1,48 @@
+:root{color-scheme:dark;--bg:#0a1021;--panel:#151d34;--border:#303a59;--text:#f3f4ff;--muted:#adb9d5;--lavender:#d8c0ff}
+*{box-sizing:border-box}
+body.favorites-midnight{margin:0;min-height:100vh;background:var(--bg)!important;color:var(--text)!important;font-family:'DM Sans',Arial,sans-serif}
+body.favorites-midnight:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 10% 5%,#24235a77,transparent 42%),radial-gradient(ellipse at 92% 30%,#47236655,transparent 44%)}
+.favorites-midnight h1,.favorites-midnight h2,.favorites-midnight h3{font-family:Outfit,Arial,sans-serif;color:#fff}
+.favorites-midnight .mn-nav{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;padding:16px max(20px,calc((100vw - 1240px)/2));background:#10172b;border-bottom:1px solid #303654;min-height:76px}
+.favorites-midnight .mn-brand{text-decoration:none;font:800 22px Outfit,Arial,sans-serif;color:#fff;white-space:nowrap}
+.favorites-midnight .mn-brand span{display:inline-grid;place-items:center;width:39px;height:39px;border-radius:12px;background:linear-gradient(135deg,#5374f1,#9b56e5);margin-right:8px}
+.favorites-midnight .mn-links{display:flex;align-items:center;gap:19px;flex-wrap:wrap}
+.favorites-midnight .mn-links a{color:#bfc5df;text-decoration:none;font-size:13px;font-weight:700}
+.favorites-midnight .mn-links a.active,.favorites-midnight .mn-links a:hover{color:#d5bbff}
+.favorites-midnight .mn-links a.mn-logout{padding:10px 14px;border-radius:11px;background:#242447;color:#e7d9ff}
+.favorites-midnight .mn-shell{max-width:1230px;margin:0 auto;padding:35px 20px 70px}
+.favorites-midnight .mn-hero{border:1px solid #474275;border-radius:25px;padding:35px 38px;background:radial-gradient(circle at 92% 18%,#8852bd66,transparent 36%),linear-gradient(115deg,#192a5a,#2c285f 60%,#432c74);box-shadow:0 18px 40px #0003;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.favorites-midnight .mn-kicker{color:#cbb9ff;font-size:11px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.favorites-midnight .mn-hero h1{font-size:clamp(32px,4vw,48px);letter-spacing:-1.2px;margin:12px 0}
+.favorites-midnight .mn-hero h1 span{color:#e0c5ff}
+.favorites-midnight .mn-hero p{font-size:14px;color:#d4d7f1;line-height:1.7;margin:0;max-width:550px}
+.favorites-midnight .mn-browse,.favorites-midnight .mn-view{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;color:#fff;background:linear-gradient(110deg,#5679ee,#8656e4);border:1px solid #9c83ff55;border-radius:11px;padding:12px 17px;font-weight:800;font-size:12px;transition:transform .2s,filter .2s}
+.favorites-midnight .mn-browse:hover,.favorites-midnight .mn-view:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.favorites-midnight .mn-summary{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:28px 0 18px}
+.favorites-midnight .mn-summary h2{font-size:22px;margin:0}
+.favorites-midnight .mn-count{border:1px solid #424b6d;background:#1b2541;color:#c8d1ed;border-radius:100px;padding:9px 15px;font-size:12px;font-weight:700}
+.favorites-midnight .mn-count strong{color:#fff;font-size:15px}
+.favorites-midnight .mn-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:19px}
+.favorites-midnight .mn-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;overflow:hidden;min-width:0;box-shadow:0 8px 25px #0002;transition:transform .2s,border-color .2s}
+.favorites-midnight .mn-card:hover{transform:translateY(-3px);border-color:#6e62ac}
+.favorites-midnight .mn-preview{height:135px;background:radial-gradient(circle at 75% 20%,#7751b877,transparent 40%),linear-gradient(120deg,#202c60,#302858);display:grid;place-items:center;position:relative}
+.favorites-midnight .mn-preview-icon{display:grid;place-items:center;width:70px;height:70px;background:#ffffff1c;border:1px solid #ffffff30;border-radius:20px;font-size:35px}
+.favorites-midnight .mn-type{position:absolute;top:14px;left:14px;border:1px solid #ffffff30;background:#151b3a99;color:#f0e9ff;padding:6px 10px;border-radius:8px;font-size:10px;font-weight:800}
+.favorites-midnight .mn-heart{position:absolute;right:14px;top:12px;font-size:22px}
+.favorites-midnight .mn-card-body{padding:21px}
+.favorites-midnight .mn-subject{display:inline-block;color:#d5c0ff;background:#382f64;border-radius:7px;padding:6px 9px;font-size:10px;font-weight:800;margin-bottom:11px}
+.favorites-midnight .mn-card h3{font-size:20px;margin:0 0 9px;overflow-wrap:anywhere}
+.favorites-midnight .mn-meta{color:#aab5d3;font-size:12px;line-height:1.7;overflow-wrap:anywhere}
+.favorites-midnight .mn-description{color:#b5bed7;font-size:12px;line-height:1.75;margin:12px 0;overflow-wrap:anywhere}
+.favorites-midnight .mn-date{font-size:11px;color:#8f9dbb}
+.favorites-midnight .mn-actions{display:flex;flex-wrap:wrap;align-items:center;gap:9px;border-top:1px solid #303b5c;padding-top:16px;margin-top:16px}
+.favorites-midnight .mn-actions form{margin:0}
+.favorites-midnight .mn-remove{display:inline-flex;align-items:center;justify-content:center;background:#34243d;color:#ffc0d9;border:1px solid #754665;border-radius:11px;padding:12px 15px;font-family:inherit;font-size:12px;font-weight:800;cursor:pointer}
+.favorites-midnight .mn-remove:hover{background:#4c2947}
+.favorites-midnight .mn-empty{text-align:center;background:var(--panel);border:1px dashed #515a7d;border-radius:22px;padding:64px 20px}
+.favorites-midnight .mn-empty-icon{display:grid;place-items:center;width:80px;height:80px;background:#312b56;border-radius:23px;margin:0 auto 15px;font-size:38px}
+.favorites-midnight .mn-empty h2{margin:8px 0;font-size:25px}
+.favorites-midnight .mn-empty p{color:var(--muted);font-size:13px;line-height:1.7;margin:0 auto 23px;max-width:400px}
+.favorites-midnight .mn-footer{text-align:center;padding-top:40px;color:#7c88a7;font-size:12px}
+@media(max-width:1000px){.favorites-midnight .mn-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.favorites-midnight .mn-shell{padding:22px 13px 50px}.favorites-midnight .mn-hero{padding:28px 21px}.favorites-midnight .mn-grid{grid-template-columns:1fr}.favorites-midnight .mn-nav{padding:14px}.favorites-midnight .mn-links{gap:12px}}

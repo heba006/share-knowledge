@@ -1,0 +1,43 @@
+:root{color-scheme:dark;--bg:#0a1021;--card:#17213a;--line:#354061;--text:#f4f2ff;--muted:#aeb9d4;--purple:#d6baff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:'DM Sans',Arial,sans-serif;position:relative}
+body:before{content:'';position:fixed;inset:0;z-index:-1;background:radial-gradient(ellipse at 14% 25%,#25397788,transparent 43%),radial-gradient(ellipse at 92% 80%,#56317e77,transparent 45%);pointer-events:none}
+a{text-decoration:none;color:#cdb7ff}
+a:hover{color:#fff}
+.topbar{max-width:1260px;margin:auto;padding:25px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:inline-flex;align-items:center;gap:11px;color:#fff;font:800 22px Outfit,Arial,sans-serif;letter-spacing:-.6px}
+.brand-icon{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#537af3,#9753db);font-size:22px}
+.back{font-size:13px;font-weight:700;color:#bac3de}
+.layout{max-width:1190px;min-height:calc(100vh - 102px);margin:auto;padding:32px 28px 72px;display:grid;grid-template-columns:1fr minmax(390px,490px);gap:clamp(35px,7vw,100px);align-items:center}
+.story{padding:20px 0}
+.eyebrow{display:inline-block;border:1px solid #625b9e;background:#40346b55;padding:9px 13px;border-radius:99px;color:#d7c5ff;font-size:11px;letter-spacing:1.4px;font-weight:800}
+.story h1{font:800 clamp(38px,5vw,65px)/1.09 Outfit,Arial,sans-serif;letter-spacing:-2px;margin:24px 0 19px}
+.story h1 span{background:linear-gradient(100deg,#92b6ff,#d5a9ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.story>p{color:#b9c4df;line-height:1.9;max-width:480px;font-size:15px}
+.perks{display:grid;gap:17px;margin-top:35px}
+.perk{display:flex;gap:13px;align-items:center;color:#d7def0;font-size:13px;font-weight:600}
+.perk-icon{display:grid;place-items:center;width:42px;height:42px;flex-shrink:0;border-radius:13px;background:#252b53;border:1px solid #464773;font-size:20px}
+.card{border:1px solid #394565;border-radius:25px;padding:36px;background:linear-gradient(160deg,#1b2540,#131b31);box-shadow:0 30px 70px #0005}
+.card-kicker{font-size:11px;color:#c7afff;letter-spacing:1.7px;font-weight:800}
+.card h2{font:800 33px Outfit,Arial,sans-serif;margin:10px 0 8px;letter-spacing:-.8px}
+.subtitle{color:#aeb9d4;font-size:13px;line-height:1.7;margin:0 0 24px}
+.field{margin:17px 0}
+.field label{display:block;color:#d7dcf1;font-size:12px;font-weight:800;margin-bottom:9px}
+.field input{width:100%;padding:15px 16px;border-radius:12px;border:1px solid #3e4b6b;background:#0d162a;color:#fff;font:500 14px 'DM Sans',Arial,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.field input::placeholder{color:#7e8baa}
+.field input:focus{border-color:#ac8cff;box-shadow:0 0 0 3px #9570f72b}
+.password-wrap{position:relative}
+.password-wrap input{padding-right:76px}
+.toggle-password{position:absolute;right:10px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:#d0baff;font-weight:800;cursor:pointer;padding:9px;font-size:12px}
+.hint{color:#8f9dbb;font-size:11px;margin-top:8px}
+.submit{display:block;width:100%;padding:15px;border:0;border-radius:12px;background:linear-gradient(110deg,#537df3,#8758e2);color:#fff;font:800 14px 'DM Sans',Arial,sans-serif;cursor:pointer;margin-top:23px;box-shadow:0 12px 25px #5e54b92c;transition:filter .2s,transform .2s}
+.submit:hover{filter:brightness(1.13);transform:translateY(-1px)}
+.message{border-radius:12px;padding:13px 15px;font-size:12px;font-weight:700;line-height:1.6;margin:16px 0}
+.error{background:#552a3c;border:1px solid #a64b6c;color:#ffd4df}
+.success{background:#183f3a;border:1px solid #398d7e;color:#c1ffe6}
+.login-line{text-align:center;color:#aeb9d4;font-size:13px;margin:23px 0 0}
+.login-line a{font-weight:800}
+.signin-cta{display:inline-block;margin-top:10px;background:#2e365b;border:1px solid #625c9d;border-radius:10px;padding:10px 14px;font-size:12px;font-weight:800}
+.footer{text-align:center;color:#8793b3;font-size:11px;margin-top:22px}
+@media(max-width:850px){.layout{grid-template-columns:1fr;gap:25px;max-width:620px;padding-top:15px}.story{padding:5px 0}.story h1{font-size:39px}.perks{grid-template-columns:1fr 1fr;gap:13px;margin-top:20px}}
+@media(max-width:520px){.topbar{padding:20px 16px}.brand{font-size:19px}.layout{padding:14px 15px 50px}.card{padding:25px 20px}.story h1{font-size:35px}.perks{grid-template-columns:1fr}.card h2{font-size:29px}}

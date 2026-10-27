@@ -1,0 +1,198 @@
+body {
+            background: #080d1e;
+            color: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .my-page {
+            max-width: 1200px;
+            margin: 45px auto;
+            padding: 0 22px 60px;
+        }
+
+        .my-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .my-header h1 {
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .my-header p {
+            color: #aeb9d4;
+        }
+
+        .my-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #6854eb, #9665ef);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            padding: 12px 20px;
+            font-weight: bold;
+        }
+
+        .my-btn:hover {
+            opacity: 0.9;
+        }
+
+        .my-count {
+            color: #c4b5fd;
+            margin-bottom: 22px;
+        }
+
+        .my-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .my-card {
+            background: #111a33;
+            border: 1px solid #293555;
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
+        .my-subject {
+            display: inline-block;
+            background: #292253;
+            color: #c4b5fd;
+            border-radius: 20px;
+            padding: 7px 13px;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .my-card h3 {
+            color: white;
+            margin-bottom: 12px;
+            overflow-wrap: anywhere;
+        }
+
+        .my-year {
+            color: #9faed0;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+
+        .my-description {
+            color: #c7d2e6;
+            line-height: 1.7;
+            overflow-wrap: anywhere;
+            white-space: pre-wrap;
+            margin-bottom: 18px;
+        }
+
+        .my-date {
+            color: #8492b1;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .my-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .my-view {
+            background: #24345d;
+            color: #e0e7ff;
+            padding: 10px 15px;
+            border-radius: 9px;
+            text-decoration: none;
+        }
+
+        .my-view:hover {
+            background: #354a7b;
+        }
+
+        .my-empty {
+            text-align: center;
+            background: #111a33;
+            border: 1px solid #293555;
+            border-radius: 18px;
+            padding: 55px 25px;
+        }
+
+        .my-empty h2 {
+            color: white;
+            margin-bottom: 12px;
+        }
+
+        .my-empty p {
+            color: #aeb9d4;
+            margin-bottom: 25px;
+        }
+
+        .my-alert {
+            background: #4c1d2c;
+            color: #fecdd3;
+            border-radius: 12px;
+            padding: 18px;
+        }
+
+        .my-navbar {
+            background: #10182e;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+            border-bottom: 1px solid #293555;
+        }
+
+        .my-navbar a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .my-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .my-logo {
+            color: white;
+            font-weight: bold;
+            font-size: 21px;
+        }
+
+.my-notice-success {
+    background: #153e35;
+    color: #a7f3d0;
+    border: 1px solid #2f806b;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.my-notice-error {
+    background: #4c1d2c;
+    color: #fecdd3;
+    border: 1px solid #b91c1c;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+}
+
+.my-delete-btn {
+    background: #7f1d1d;
+    color: #fecaca;
+    border: 1px solid #b91c1c;
+    padding: 10px 15px;
+    border-radius: 9px;
+    cursor: pointer;
+    font: inherit;
+}
