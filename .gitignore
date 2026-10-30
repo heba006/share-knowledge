@@ -15,3 +15,4 @@ share_knowledge_private_uploads/
 # Local database test
 test_db.php
 assets/images/browse.php
+/db.php
