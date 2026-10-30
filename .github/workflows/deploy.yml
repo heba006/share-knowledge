@@ -1,0 +1,12 @@
+
+name: Deploy Share Knowledge
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check GitHub Actions
+        run: echo "Share Knowledge deployment setup is ready"
