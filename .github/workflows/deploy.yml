@@ -5,8 +5,26 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
+  test-ftp:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check GitHub Actions
-        run: echo "Share Knowledge deployment setup is ready"
+      - name: Test InfinityFree FTP connection
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import ftplib
+          import os
+
+          ftp = ftplib.FTP()
+          ftp.connect(os.environ["FTP_SERVER"], 21, timeout=30)
+          ftp.login(
+              os.environ["FTP_USERNAME"],
+              os.environ["FTP_PASSWORD"]
+          )
+          print("FTP connection successful")
+          ftp.quit()
+          PY
