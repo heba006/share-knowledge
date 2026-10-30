@@ -2,36 +2,35 @@
 name: Deploy Share Knowledge
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
-  test-ftp:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test InfinityFree FTP connection
-        env:
-          FTP_SERVER: ${{ secrets.FTP_SERVER }}
-          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        run: |
-          python3 - <<'PY'
-          import ftplib
-          import os
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-          ftp = ftplib.FTP()
-          ftp.connect(os.environ["FTP_SERVER"], 21, timeout=30)
-          ftp.login(
-              os.environ["FTP_USERNAME"],
-              os.environ["FTP_PASSWORD"]
-          )
-          print("FTP connection successful")
-          ftp.quit()
-          PY
-          
+      - name: Verify website files
+        run: |
+          test -f index.php || {
+            echo "ERROR: index.php is missing"
+            exit 1
+          }
+
+          test -f login.php || {
+            echo "ERROR: login.php is missing"
+            exit 1
+          }
+
+          test -d assets || {
+            echo "ERROR: assets folder is missing"
+            exit 1
+          }
+
+          echo "Website files verified successfully"
+
       - name: Upload website to InfinityFree
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
@@ -42,42 +41,80 @@ jobs:
           import ftplib
           import os
 
+          excluded_files = {
+              "db.php",
+              ".gitignore",
+              "test_db.php"
+          }
+
+          excluded_dirs = {
+              ".git",
+              ".github",
+              "share_knowledge_private_uploads"
+          }
+
           ftp = ftplib.FTP()
-          ftp.connect(os.environ["FTP_SERVER"], 21, timeout=30)
-          ftp.login(os.environ["FTP_USERNAME"], os.environ["FTP_PASSWORD"])
+          ftp.connect(
+              os.environ["FTP_SERVER"],
+              21,
+              timeout=30
+          )
 
-          ftp.cwd("htdocs")
+          ftp.login(
+              os.environ["FTP_USERNAME"],
+              os.environ["FTP_PASSWORD"]
+          )
 
-          excluded_files = {"db.php", ".gitignore", "test_db.php"}
-          excluded_dirs = {".git", ".github", "share_knowledge_private_uploads"}
+          ftp.cwd("/htdocs")
+
+          uploaded = 0
 
           for root, dirs, files in os.walk("."):
-              dirs[:] = [d for d in dirs if d not in excluded_dirs]
+              dirs[:] = [
+                  d for d in dirs
+                  if d not in excluded_dirs
+              ]
+
               relative = os.path.relpath(root, ".")
-              if relative == ".":
-                  relative = ""
+
+              ftp.cwd("/htdocs")
+
+              if relative != ".":
+                  for part in relative.split(os.sep):
+                      try:
+                          ftp.mkd(part)
+                      except ftplib.error_perm as error:
+                          if not str(error).startswith("550"):
+                              raise
+
+                      ftp.cwd(part)
 
               for filename in files:
                   if filename in excluded_files:
                       continue
 
-                  local_path = os.path.join(root, filename)
-                  remote_dir = "/htdocs"
+                  local_path = os.path.join(
+                      root,
+                      filename
+                  )
 
-                  if relative:
-                      for part in relative.split(os.sep):
-                          remote_dir += "/" + part
-                          try:
-                              ftp.mkd(remote_dir)
-                          except ftplib.error_perm as error:
-                              if not str(error).startswith("550"):
-                                  raise
-
-                  remote_path = remote_dir + "/" + filename
                   with open(local_path, "rb") as file:
-                      ftp.storbinary("STOR " + remote_path, file)
+                      ftp.storbinary(
+                          "STOR " + filename,
+                          file
+                      )
+
+                  uploaded += 1
 
           ftp.quit()
-          print("Website files uploaded successfully")
+
+          if uploaded == 0:
+              raise RuntimeError(
+                  "No website files were uploaded"
+              )
+
+          print(
+              f"Successfully uploaded {uploaded} files"
+          )
           PY
 
